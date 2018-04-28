@@ -1,13 +1,15 @@
 distMin = 0.2 ;
-distMax = 2 ;
-numDist = 5 ;
+distMax = 3 ;
+numDist = 8 ;
 angleMin = 0 ;
 angleMax = 360 ; 
 numAngle = 10 ;
+sliceDist = 0.1 ; % number between 0 and 1 (the smaller, the closer to the microphones)
+sliceAngle = 0.4 ; % number between 0 and 1 (the smaller, the closer to zero degrees)
 
 [ errorRealApprox ] = obtain_error( distMin, distMax, numDist, angleMin, angleMax, numAngle );
 
 
 distVector = linspace ( distMin, distMax, numDist );
 angleVector = linspace ( angleMin, angleMax, numAngle );
-represent_error ( errorRealApprox, distVector, angleVector, 0.2, 0.5 );
+represent_error ( errorRealApprox, distVector, angleVector, sliceDist, sliceAngle );
